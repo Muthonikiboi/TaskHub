@@ -61,7 +61,7 @@ This is a full-stack Project Management Dashboard built using **React** (fronten
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/project-management-dashboard.git
+https://github.com/Muthonikiboi/TaskHub.git
 cd TaskHub
 ```
 
