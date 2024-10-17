@@ -132,3 +132,8 @@ dist
 #nodemodules
 
 node_modules/
+
+#env
+
+.env
+
