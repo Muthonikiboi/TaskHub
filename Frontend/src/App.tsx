@@ -1,7 +1,11 @@
 import './App.css';
 import slides from './data/Slides';
 import AuthSlider from './components/AuthSlider';
-import Login from './pages/login';
+// import Login from './pages/login';
+// import SignUp from './pages/signup';
+// import ForgotPassword from './pages/ForgotPassword';
+import ResetPassword from './pages/resetPassword';
+
 
 function App() {
   return (
@@ -12,7 +16,10 @@ function App() {
         </div>
         <div className="form">
           {/* Form content */}
-          <Login />
+          {/* <Login /> */}
+          {/* <SignUp /> */}
+          {/* <ForgotPassword /> */}
+          <ResetPassword />
         </div>
       </div>
     </>

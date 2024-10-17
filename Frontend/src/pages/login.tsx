@@ -1,8 +1,18 @@
-import google from '../assets/google.png'
+import React from 'react';
+import google from '../assets/google.jpeg'
 
-const form= {
-    width: '60%',backgroundColor: 'whitesmoke',margin:'auto',height:'80vh', marginTop:'10%',display: 'flex',justifycontent: 'center',flexDirection:'column',alignItems: 'center',borderRadius:'20px'
-}
+const form: React.CSSProperties = {
+    width: '60%',
+    backgroundColor: 'whitesmoke',
+    margin: 'auto',
+    height: '80vh',
+    marginTop: '10%',
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column', 
+    alignItems: 'center',
+    borderRadius: 20
+};
 
 const heading = {
     fontSize: '50px',
@@ -17,7 +27,7 @@ const signIn = {
 }
 
 const userInput = {
-    padding: '8px 60px ',
+    padding: '10px 60px ',
     marginTop: '10px',
     borderRadius: '10px',
     border: '1px solid black'
@@ -37,7 +47,7 @@ const forget = {
 }
 
 const btn={
-    padding: '8px 128px',
+    padding: '10px 128px',
     border:'none',
     borderRadius: '10px',
     marginTop: '10px',
