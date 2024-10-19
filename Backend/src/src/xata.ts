@@ -522,10 +522,8 @@ export type DatabaseSchema = {
 const DatabaseClient = buildClient();
 
 const defaultOptions = {
-  databaseURL:
-    "https://vincent-kamami-s-workspace-7hal8u.us-east-1.xata.sh/db/TaskManagementWebApp",
-  xataApiUrl:
-     "https://vincent-kamami-s-workspace-7hal8u.us-east-1.xata.sh/db/TaskManagementWebApp"  
+ apiKey: process.env.XATA_API_KEY,
+ databaseURL: process.env.XATA_API_URL  
 };
 
 export class XataClient extends DatabaseClient<DatabaseSchema> {
