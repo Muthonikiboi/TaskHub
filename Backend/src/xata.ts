@@ -6,6 +6,10 @@ import type {
   XataRecord,
 } from "@xata.io/client";
 
+import dotenv from 'dotenv'
+
+dotenv.config()
+
 const tables = [
   {
     name: "Comments",
@@ -520,6 +524,8 @@ const DatabaseClient = buildClient();
 const defaultOptions = {
   databaseURL:
     "https://vincent-kamami-s-workspace-7hal8u.us-east-1.xata.sh/db/TaskManagementWebApp",
+    apiKey: process.env.XATA_API_KEY,
+    branch: process.env.XATA_BRANCH
 };
 
 export class XataClient extends DatabaseClient<DatabaseSchema> {
