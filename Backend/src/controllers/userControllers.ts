@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { getXataClient } from '../src/xata';
+import { getXataClient } from '../xata';
 import { generateToken } from '../utils/utils';
 import bcrypt from 'bcrypt';
 

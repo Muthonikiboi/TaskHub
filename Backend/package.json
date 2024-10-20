@@ -2,11 +2,11 @@
   "name": "bloghub",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.ts",
-    "dev": "nodemon src/fetchData.ts",
+    
+    "dev": "nodemon src/server.ts",
     "build": "npx tsc"
   },
   "keywords": [],

@@ -6,7 +6,7 @@ import type {
   XataRecord,
 } from "@xata.io/client";
 
-require('dotenv').config();
+
 
 
 
@@ -522,8 +522,8 @@ export type DatabaseSchema = {
 const DatabaseClient = buildClient();
 
 const defaultOptions = {
- apiKey: process.env.XATA_API_KEY,
- databaseURL: process.env.XATA_API_URL  
+//  apiKey: process.env.XATA_API_KEY,
+ databaseURL: "https://vincent-kamami-s-workspace-7hal8u.us-east-1.xata.sh/db/TaskManagementWebApp"
 };
 
 export class XataClient extends DatabaseClient<DatabaseSchema> {
@@ -537,6 +537,10 @@ let instance: XataClient | undefined = undefined;
 export const getXataClient = () => {
   if (instance) return instance;
 
-  instance = new XataClient();
+  instance = new XataClient({
+    apiKey: process.env.XATA_API_KEY,
+    branch: process.env.XATA_BRANCH
+
+  });
   return instance;
 };

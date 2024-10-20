@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
-import { getXataClient } from '../src/xata';
+import { getXataClient } from '../xata';
 import dotenv from 'dotenv';
 
 dotenv.config();
