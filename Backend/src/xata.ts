@@ -6,9 +6,9 @@ import type {
   XataRecord,
 } from "@xata.io/client";
 
-require('dotenv').config();
+import dotenv from 'dotenv'
 
-
+dotenv.config();
 
 const tables = [
   {
@@ -524,8 +524,6 @@ const DatabaseClient = buildClient();
 const defaultOptions = {
   databaseURL:
     "https://vincent-kamami-s-workspace-7hal8u.us-east-1.xata.sh/db/TaskManagementWebApp",
-  xataApiUrl:
-     "https://vincent-kamami-s-workspace-7hal8u.us-east-1.xata.sh/db/TaskManagementWebApp"  
 };
 
 export class XataClient extends DatabaseClient<DatabaseSchema> {
