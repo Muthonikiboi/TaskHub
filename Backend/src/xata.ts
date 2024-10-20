@@ -8,7 +8,7 @@ import type {
 
 import dotenv from 'dotenv'
 
-dotenv.config()
+dotenv.config();
 
 const tables = [
   {
@@ -524,8 +524,6 @@ const DatabaseClient = buildClient();
 const defaultOptions = {
   databaseURL:
     "https://vincent-kamami-s-workspace-7hal8u.us-east-1.xata.sh/db/TaskManagementWebApp",
-    apiKey: process.env.XATA_API_KEY,
-    branch: process.env.XATA_BRANCH
 };
 
 export class XataClient extends DatabaseClient<DatabaseSchema> {
