@@ -11,6 +11,7 @@ import {
 
 const router = express.Router();
 
+console.log(createComment);
 router
 .route("/")
 .get(getAllComments)
