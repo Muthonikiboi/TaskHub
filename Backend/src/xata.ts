@@ -6,8 +6,6 @@ import type {
   XataRecord,
 } from "@xata.io/client";
 
-require dotenv.config();
-
 const tables = [
   {
     name: "Comments",
