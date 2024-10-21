@@ -1,12 +1,31 @@
-import { Router } from 'express';
-import { registerUser, loginUser, getAllUsers, deleteUser } from '../controllers/userControllers';
-import { protect, adminOnly } from '../middlewares/authMiddlewares';
+import express, { Router } from "express";
+import { body } from "express-validator";
 
-const router = Router();
+import {
+  createUser,
+  getAllUsers,
+  updateUserById,
+  getUserById,
+  deleteUserById,
+} from "../controllers/UserController";
 
-router.post("/register", registerUser);
-router.post("/login", loginUser);
-router.get("/", protect, adminOnly, getAllUsers);
-router.delete("/:userId", protect, adminOnly, deleteUser);
+const router = express.Router();
+
+router
+  .route("/")
+  .get(getAllUsers)
+  .post(
+    [body("username"), body("useremail"), body("userpassword")],
+    createUser
+  );
+
+router
+  .route("/:id")
+  .get(getUserById)
+  .patch(
+    [body("username"), body("useremail"), body("userpassword")],
+    updateUserById
+  )
+  .delete(deleteUserById);
 
 export default router;
