@@ -219,7 +219,9 @@ const Home: React.FC = () => {
             </div>
           </div>
 
-          <div className="grid-item item2"></div>
+          <div className="grid-item item2">
+            <h3><li>Tasks in To-Do list 👆 will be deleted after 24hrs</li></h3>
+          </div>
           <div className="grid-item item3">
               <h3 className="titleHeadings2">Time Tracker</h3>
               <div className="timer-display">
@@ -227,7 +229,37 @@ const Home: React.FC = () => {
               </div>
           </div>
           <div className="grid-item item4">4</div>
-          <div className="grid-item item5">5</div>
+          <div className="grid-item item5">
+           <div className="taskLst">
+            <h2>My Tasks</h2>
+           </div>
+           <div className="tsList">
+            {/* <li>Team</li>
+            <li>Task</li>
+            <li>Due Date</li> */}
+            <div className="divHeading">
+              <div className="div1">TEAM</div>
+              <div className="div2">TASK</div>
+              <div className="div3">DUE DATE</div>
+            </div>
+            <hr />
+            <div className="divHeading">
+              <div className="div1">Team1</div>
+              <div className="div2">Task1</div>
+              <div className="div3">Due Date</div>
+            </div>
+            <div className="divHeading">
+              <div className="div1">Team2</div>
+              <div className="div2">Task2</div>
+              <div className="div3">Due Date</div>
+            </div>
+            <div className="divHeading">
+              <div className="div1">Team3</div>
+              <div className="div2">Task3</div>
+              <div className="div3">Due Date</div>
+            </div>
+           </div>
+          </div>
         </div>
       </article>
     </>

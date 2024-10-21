@@ -2,14 +2,14 @@ import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faPeopleGroup, faClipboardCheck, faListCheck, faPlus } from "@fortawesome/free-solid-svg-icons"; 
 import '../css/navSection.css';
-import Tasks from "../components/myTasks"
-import Home from "../components/home";
-import Teams from "../components/myTeams";
+// import Tasks from "../components/myTasks"
+// import Home from "../components/home";
+// import Teams from "../components/myTeams";
 
-const handleSave = () => {
-  // Save settings
-  history.push('');
-};
+// const handleSave = () => {
+//   // Save settings
+//   history.push('');
+// };
 
 function NavbarSection({ addTeam }) {
   const [showModal, setShowModal] = useState(false); // State for modal visibility
