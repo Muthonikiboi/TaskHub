@@ -10,6 +10,7 @@ import TeamRoutes from "./routes/TeamRoutes";
 import ProjectRoutes from "./routes/ProjectRoutes";
 import CommentsRoutes from "./routes/CommentRoutes";
 import UserRoutes from "./routes/UserRoutes";
+import { errorHandler, notFoundHandler } from './errors/errorHandler';
 
 const app: Express = express();
 
@@ -38,6 +39,9 @@ app.use("/api/v1/teams", TeamRoutes);
 app.use("/api/v1/projects", ProjectRoutes);
 app.use("/api/v1/comments", CommentsRoutes);
 app.use("/api/v1/users", UserRoutes);
+
+app.use('./errors/errorHandler', notFoundHandler); // Not Found handler
+app.use('./errors/errorHandler', errorHandler);      // Error handler 
 
 // Handle undefined routes
 app.all("*", (req: Request, res: Response, next: NextFunction) => {
