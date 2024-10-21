@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from "express";
-import { registerValidator, updateUserValidator } from "../validators"; // Adjust path if needed
+import { registerValidator, updateUserValidator } from "../validators";
 
 describe("Request Validators", () => {
   let req: Request;
@@ -50,11 +50,11 @@ describe("Request Validators", () => {
       );
     });
 
-    // Add more test cases for other invalid data scenarios
+    
     it("should fail validation with short password", async () => {
       req.body = {
         email: "test@example.com",
-        password: "short", // Password less than 6 characters
+        password: "short", 
         name: "Test User",
         age: 25,
         city: "Test City",
@@ -80,7 +80,7 @@ describe("Request Validators", () => {
         password: "password123",
         age: 25,
         city: "Test City",
-      }; // Missing name property
+      }; 
 
       await registerValidator(req, res, next);
       expect(next).not.toHaveBeenCalled();
@@ -119,7 +119,7 @@ describe("Request Validators", () => {
         email: "test@example.com",
         password: "password123",
         name: "Test User",
-        age: 15, // Age less than 18
+        age: 15, 
         city: "Test City",
       };
 
@@ -135,7 +135,7 @@ describe("Request Validators", () => {
       );
     });
 
-    // (e.g., short password, missing name, invalid age, missing city)
+  
   });
 
   describe("updateUserValidator", () => {
@@ -169,7 +169,6 @@ describe("Request Validators", () => {
 
     it("Age should be 18 years or greater", () => {});
 
-    // Add more test cases for other invalid data scenarios
-    // (e.g., short password, invalid age)
+    
   });
 });

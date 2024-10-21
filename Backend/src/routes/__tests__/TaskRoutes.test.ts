@@ -1,6 +1,6 @@
 import request from 'supertest';
-import app from '../../server'; // Adjust the path if necessary
-import taskRoutes from '../TaskRoutes'; // Adjust the path if necessary
+import app from '../../server'; 
+import taskRoutes from '../TaskRoutes'; 
 import * as TaskController from '../../controllers/TaskController'; 
 import { jest } from '@jest/globals';
 
@@ -12,7 +12,7 @@ jest.mock('../../controllers/TaskController', () => ({
   deleteTaskById: jest.fn(),
 }));
 
-// Mock task data - adjust to match your actual data structure
+// Mock task data
 const mockTasks = [
   { 
     "description": "Finish API documentation",
@@ -27,7 +27,7 @@ const mockTasks = [
 
 describe('Task Routes', () => {
   beforeAll(() => {
-    app.use('/api/v1/tasks', taskRoutes); // Adjust the path if necessary
+    app.use('/api/v1/tasks', taskRoutes); 
   });
 
   describe('GET /api/v1/tasks', () => {

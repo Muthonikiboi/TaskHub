@@ -1,6 +1,6 @@
 import request from 'supertest';
-import app from '../../server'; // Adjust the path if necessary
-import commentRoutes from '../CommentRoutes'; // Adjust the path if necessary
+import app from '../../server'; 
+import commentRoutes from '../CommentRoutes'; 
 import * as CommentsController from '../../controllers/CommentsController'; 
 import { jest } from '@jest/globals';
 import {Request, Response} from 'express'

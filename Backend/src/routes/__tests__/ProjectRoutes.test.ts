@@ -25,7 +25,7 @@ const mockProjects = [
 
 describe('Project Routes', () => {
   beforeAll(() => {
-    app.use('/api/v1/projects', projectRoutes); // Make sure this matches your actual API endpoint
+    app.use('/api/v1/projects', projectRoutes); 
   });
 
   describe('GET /api/v1/projects', () => {

@@ -122,7 +122,7 @@ export const getTeamById = async (req: Request, res: Response, next: NextFunctio
     }
 }
 
-export const deletTeamById = async (req: Request, res: Response, next: NextFunction) => {
+export const deleteTeamById = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const teamId = req.params.id;
 

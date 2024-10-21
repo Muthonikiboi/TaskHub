@@ -1,6 +1,6 @@
 import request from 'supertest';
-import app from '../../server'; // Adjust the path if necessary
-import userRoutes from '../UserRoutes'; // Adjust the path if necessary
+import app from '../../server';
+import userRoutes from '../UserRoutes'; 
 import * as UserController from '../../controllers/UserController'; 
 import { jest } from '@jest/globals';
 

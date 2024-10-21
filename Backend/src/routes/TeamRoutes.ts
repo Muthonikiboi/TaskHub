@@ -6,7 +6,7 @@ import {
   getAllTeams,
   getTeamById,
   updateTeamById,
-  deletTeamById,
+  deleteTeamById,
   getTeamsByUserId
 } from "../controllers/TeamController";
 
@@ -21,7 +21,7 @@ router
   .route("/:id")
   .get(getTeamById)
   .patch([body("teamname"), body("description")], updateTeamById)
-  .delete(deletTeamById);
+  .delete(deleteTeamById);
 
 router.route("/user/:id").get(getTeamsByUserId)  
 

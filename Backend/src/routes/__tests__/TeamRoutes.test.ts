@@ -1,6 +1,6 @@
 import request from 'supertest';
-import app from '../../server'; // Adjust the path if necessary
-import teamRoutes from '../TeamRoutes'; // Adjust the path if necessary
+import app from '../../server'; 
+import teamRoutes from '../TeamRoutes'; 
 import * as TeamController from '../../controllers/TeamController'; 
 import { jest } from '@jest/globals';
 
@@ -9,7 +9,7 @@ jest.mock('../../controllers/TeamController', () => ({
   getAllTeams: jest.fn(),
   getTeamById: jest.fn(),
   updateTeamById: jest.fn(),
-  deletTeamById: jest.fn(), // Note the typo in your route file ('deletTeamById')
+  deleteTeamById: jest.fn(), 
   getTeamsByUserId: jest.fn()
 }));
 
@@ -36,7 +36,7 @@ const mockTeams = [
 
 describe('Team Routes', () => {
   beforeAll(() => {
-    app.use('/api/v1/teams', teamRoutes); // Adjust the path if necessary
+    app.use('/api/v1/teams', teamRoutes);
   });
 
   describe('GET /api/v1/teams', () => {
@@ -104,7 +104,7 @@ describe('Team Routes', () => {
   describe('DELETE /api/v1/teams/:id', () => {
     it('should delete a team by ID', async () => {
       const teamId = mockTeams[0].xata_id;
-      (TeamController.deletTeamById as jest.Mock).mockImplementation((req: any, res: any) => { // Note the typo
+      (TeamController.deleteTeamById as jest.Mock).mockImplementation((req: any, res: any) => { 
         res.status(200).json({ message: "Team deleted successfully" });
       });
 
@@ -123,7 +123,7 @@ describe('Team Routes', () => {
 
       const response = await request(app).get(`/api/v1/teams/user/${userId}`);
       expect(response.status).toBe(200);
-      // Add assertions to check the correct teams are returned
+      
     });
   });
 });
