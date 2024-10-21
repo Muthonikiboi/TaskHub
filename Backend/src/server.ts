@@ -39,9 +39,7 @@ app.use("/api/v1/teams", TeamRoutes);
 app.use("/api/v1/projects", ProjectRoutes);
 app.use("/api/v1/comments", CommentsRoutes);
 app.use("/api/v1/users", UserRoutes);
-
-app.use('./errors/errorHandler', notFoundHandler); // Not Found handler
-app.use('./errors/errorHandler', errorHandler);      // Error handler 
+app.use('/api/users', userRoutes);
 
 // Handle undefined routes
 app.all("*", (req: Request, res: Response, next: NextFunction) => {
@@ -69,3 +67,4 @@ app.use((err: AppErrorInstance, req: Request, res: Response, next: NextFunction)
 app.listen(port, host, () => {
     console.log(`✅Server running at http://${host}:${port}🚀🌟`);
 });
+

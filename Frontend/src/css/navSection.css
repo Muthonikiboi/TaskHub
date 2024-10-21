@@ -103,3 +103,73 @@
         background-color:var(--white) !important;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   }
+
+  /* Modal overlay background */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensures the modal is on top */
+}
+
+/* Modal content container */
+.modal-content {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+}
+
+/* Modal heading */
+.modal-content h2 {
+  color: var(--primary);
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  background-color:transparent
+}
+
+/* Input fields for team name and description */
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid var(--gray);
+  font-size: 1rem;
+  background-color: var(--whitesmoke);
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Modal buttons container */
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+  background-color:transparent
+}
+
+/* Individual buttons */
+.modal-buttons button {
+  width: 48%;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  background-color: var(--primary);
+  transition: background-color 0.3s ease;
+}
+/* Button hover effect */
+.modal-buttons button:hover {
+  background-color: var(--black);
+  color: var(--white);
+}

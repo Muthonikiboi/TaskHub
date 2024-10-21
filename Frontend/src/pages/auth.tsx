@@ -1,13 +1,13 @@
 import '../css/auth.css';
 import slides from '../data/Slides';
 import AuthSlider from '../components/AuthSlider';
-// import Login from './pages/login';
-// import SignUp from './pages/signup';
-// import ForgotPassword from './pages/ForgotPassword';
-// import ResetPassword from './pages/resetPassword';
+// import Login from './login';
+import SignUp from './signup';
+// import ForgotPassword from './ForgotPassword';
+// import ResetPassword from './resetPassword';
 
 
-function App() {
+function Auth() {
   return (
     <>
       <div className="SignUp">
@@ -17,7 +17,7 @@ function App() {
         <div className="form">
           {/* Form content */}
           {/* <Login /> */}
-          {/* <SignUp /> */}
+          <SignUp />
           {/* <ForgotPassword /> */}
           {/* <ResetPassword /> */}
         </div>
@@ -26,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default Auth;
