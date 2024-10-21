@@ -39,7 +39,7 @@ app.use("/api/v1/teams", TeamRoutes);
 app.use("/api/v1/projects", ProjectRoutes);
 app.use("/api/v1/comments", CommentsRoutes);
 app.use("/api/v1/users", UserRoutes);
-app.use('/api/users', userRoutes);
+// app.use('/api/users', userRoutes);
 
 // Handle undefined routes
 app.all("*", (req: Request, res: Response, next: NextFunction) => {
