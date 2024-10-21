@@ -9,8 +9,7 @@ import TaskRoutes from "./routes/TaskRoutes";
 import TeamRoutes from "./routes/TeamRoutes";
 import ProjectRoutes from "./routes/ProjectRoutes";
 import CommentsRoutes from "./routes/CommentRoutes";
-import UserRoutes from "./routes/UserRoutes";
-import { errorHandler, notFoundHandler } from './errors/errorHandler';
+import userRoutes from './routes/AuthRoutes';
 
 const app: Express = express();
 
@@ -38,8 +37,7 @@ app.use("/api/v1/tasks", TaskRoutes);
 app.use("/api/v1/teams", TeamRoutes);
 app.use("/api/v1/projects", ProjectRoutes);
 app.use("/api/v1/comments", CommentsRoutes);
-app.use("/api/v1/users", UserRoutes);
-// app.use('/api/users', userRoutes);
+app.use('/api/v1/users', userRoutes);
 
 // Handle undefined routes
 app.all("*", (req: Request, res: Response, next: NextFunction) => {
