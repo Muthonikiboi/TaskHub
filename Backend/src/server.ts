@@ -13,6 +13,8 @@ import UserRoutes from "./routes/UserRoutes";
 
 const app: Express = express();
 
+export default app;
+
 const port: number = parseInt(process.env.PORT as string, 10) || 7000;
 const host: string = 'localhost';
 
