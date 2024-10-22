@@ -1,14 +1,12 @@
 import './App.css';
-// import MainPage from './pages/main';
-import Auth from "./pages/auth";
+import MainPage from './pages/main';
 
 function App() {
   return (
     <>
-      <div className="App">
-        {/* <MainPage /> */}
-        <Auth />
-      </div>
+    <div className="App">
+      <MainPage />
+    </div>
     </>
   );
 }
