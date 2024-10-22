@@ -144,6 +144,26 @@ cd backend
 pnpm run test
 ```
 
+### Screenshots of Backend Tests
+![Screenshot (24)](https://github.com/user-attachments/assets/8ec75612-d594-498f-9cfb-af28afd1c208)
+
+![Screenshot (25)](https://github.com/user-attachments/assets/537ffb15-6f8f-4ad6-92da-6db42bb8075c)
+
+![Screenshot (26)](https://github.com/user-attachments/assets/2d68b2df-0c9e-49a3-9d5f-fe67df5d6ab2)
+
+![Screenshot (27)](https://github.com/user-attachments/assets/32dc0d96-e68c-4d40-8b5f-319f3a86a5ba)
+
+![Screenshot (28)](https://github.com/user-attachments/assets/7d1943f3-6a69-4022-8060-2505dbf435f1)
+
+![Screenshot (29)](https://github.com/user-attachments/assets/3de50281-39a2-4952-a290-ac6cbf06535e)
+
+![Screenshot (30)](https://github.com/user-attachments/assets/a59eb1bf-0582-47bc-af17-729dfa86ae07)
+
+
+
+
+
+
 ### Frontend Tests:
 ```bash
 cd Frontend

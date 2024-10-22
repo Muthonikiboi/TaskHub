@@ -2,8 +2,15 @@ import express, { Express, Response, Request, NextFunction, ErrorRequestHandler 
 import dotenv from 'dotenv';
 import cors from 'cors';
 import morgan from 'morgan';
+import cookieParser from 'cookie-parser';
+
+
 
 dotenv.config();
+
+const app: Express = express();
+app.use(cookieParser());
+
 import AppError from './utils/AppError';
 import TaskRoutes from "./routes/TaskRoutes";
 import TeamRoutes from "./routes/TeamRoutes";
@@ -13,7 +20,7 @@ import userRoutes from './routes/userRoutes';
 import adminRoutes from './routes/adminRoutes';
 
 
-const app: Express = express();
+
 
 export default app;
 
