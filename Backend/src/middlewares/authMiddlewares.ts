@@ -2,16 +2,16 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import { getXataClient } from '../xata';
 import dotenv from 'dotenv';
-import { CustomRequest } from '../custom.d.ts';
+// import { CustomRequest } from '../custom.d.ts';
 
 dotenv.config();
 
 const client = getXataClient();
 
 // Define a custom request type
-// interface CustomRequest extends Request {
-//     user?: any; // Replace 'any' with a specific user type if available
-// }
+interface CustomRequest extends Request {
+    user?: any; // Replace 'any' with a specific user type if available
+}
 
 // Middleware to protect routes
 const protect = async (req: CustomRequest, res: Response, next: NextFunction): Promise<void> => {

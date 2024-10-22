@@ -28,23 +28,25 @@ import {
 
 const router = Router();
 
+router.use(protect); //protect all routes
+
 // Route to view all users
-router.get("/users", protect, adminOnly, getAllUsers);
+router.get("/users",adminOnly, getAllUsers);
 
 // Route to view all tasks
-router.get("/tasks", protect, adminOnly, getAllTasks);
+router.get("/tasks",adminOnly, getAllTasks);
 
 // Route to create a new team
-router.post("/teams", protect, adminOnly, createTeam);
+router.post("/teams",adminOnly, createTeam);
 
 // Route to search users by email or username
-router.get("/users/search", protect, adminOnly, searchUsers);
+router.get("/users/search", adminOnly, searchUsers);
 
 // Route to view all comments
-router.get("/comments", protect, adminOnly, getAllComments);
+router.get("/comments",adminOnly, getAllComments);
 
 // Route to delete a user by ID
-router.delete("/users/:userId", protect, adminOnly, deleteUser);
+router.delete("/users/:userId", adminOnly, deleteUser);
 
 export default router;
 

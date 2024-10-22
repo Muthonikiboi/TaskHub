@@ -24,7 +24,7 @@ const sendResponse = (res: Response, status: number, message: string, data?: any
 export interface CustomRequest extends Request {
     user?: UserRecord; // Use the specific UserRecord type
 }
-const registerUser = async (req: Request<{}, {}, UserRecord>, res: Response): Promise<void> => {
+const registerUser = async (req: CustomRequest, res: Response): Promise<void> => {
     const { useremail, userpassword, username, role } = req.body;
 
     
