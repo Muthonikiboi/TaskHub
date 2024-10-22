@@ -4,10 +4,11 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 interface User {
-    useremail: string; // Adjust this based on your actual user model
+    useremail: string;
+    role: string // Adjust this based on your actual user model
 }
 
-const generateToken = (user: User): string => {
+export const generateToken = (user: User): string => {
     const jwtSecret = process.env.JWT_TOKEN as string;
 
     if (!jwtSecret) {
@@ -16,9 +17,9 @@ const generateToken = (user: User): string => {
 
     const payload = {
         id: user.useremail,
+        role: user.role
     };
     
     return sign(payload, jwtSecret, { expiresIn: '1d' });
 };
 
-export {generateToken}
