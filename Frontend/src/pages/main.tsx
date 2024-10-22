@@ -1,8 +1,8 @@
 import '../css/main.css';
 import NavbarSection from '../components/NavSection';
-import Home from '../components/home';
+// import Home from '../components/home';
 // import Teams from '../components/myTeams';
-// import Tasks from '../components/myTasks';
+import Tasks from '../components/myTasks';
 
 function MainPage(){
     return(
@@ -11,9 +11,9 @@ function MainPage(){
             <NavbarSection />
             </section>
             <section className='MainSection'>
-             < Home />
+             {/* < Home /> */}
              {/* < Teams /> */}
-             {/* < Tasks /> */}
+             < Tasks />
             </section>
         </div>
     )
