@@ -29,7 +29,7 @@ import {
 const router = Router();
 
 // Route to view all users
-router.get("/users", protect, adminOnly, getAllUsers);
+router.get("/users", getAllUsers);
 
 // Route to view all tasks
 router.get("/tasks", protect, adminOnly, getAllTasks);

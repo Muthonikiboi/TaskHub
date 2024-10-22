@@ -17,6 +17,7 @@ import TeamRoutes from "./routes/TeamRoutes";
 import ProjectRoutes from "./routes/ProjectRoutes";
 import CommentsRoutes from "./routes/CommentRoutes";
 import userRoutes from './routes/userRoutes';
+import dashBoardRoutes from './routes/dashBoardRoutes'
 import adminRoutes from './routes/adminRoutes';
 
 
@@ -47,6 +48,8 @@ app.use("/api/v1/teams", TeamRoutes);
 app.use("/api/v1/projects", ProjectRoutes);
 app.use("/api/v1/comments", CommentsRoutes);
 app.use('/api/v1/users', userRoutes);
+// app.use("/api/v1/dashboard", dashBoardRoutes);
+app.use("/api/v1/admin", adminRoutes);
 
 // Handle undefined routes
 app.all("*", (req: Request, res: Response, next: NextFunction) => {
