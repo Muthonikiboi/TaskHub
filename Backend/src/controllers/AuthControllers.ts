@@ -38,7 +38,7 @@ const registerUser = async (req: Request<{}, {}, UserRecord>, res: Response): Pr
 
         sendResponse(res, 201, 'User registered successfully', newUser);
     } catch (error) {
-        console.error('Error during user registration:', error);
+        console.log('Error during user registration:', error);
         sendResponse(res, 500, 'Server error');
     }
 };
