@@ -1,5 +1,6 @@
-import google from '../assets/google.png'
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
+import google from '../assets/google.png';
 
 const form: React.CSSProperties = {
     width: '60%',
@@ -84,38 +85,98 @@ const pNext = {
 }
 
 function SignUp() {
-    return (
-      <form action="" style={form}>
-        <h1 style={heading}>TASKHUB</h1><br /><br />
-        <h2 style={signIn}>SIGN UP</h2>
-        <label style={label}>
-          <p>Username</p>
-          <input type="text" style={userInput}/>
-        </label>
-        <label style={label}>
-          <p>Email</p>
-          <input type="text" style={userInput}/>
-        </label>
-        <label style={label}>
-          <p>Password</p>
-          <input type="password" style={userInput}/>
-        </label>
-        <label style={label}>
-          <p>Confirm Password</p>
-          <input type="password" style={userInput}/>
-        </label>
-        <h4 style={forget}>Forgot password?</h4>
-        <div>
-          <button type="submit" style={btn}>Sign In</button>
-        </div>
-        <p>or</p>
-        <div style={googleDiv}>
-            <img src={google} alt="" style={googleImg}/>
-            <p >Sign in with Google</p>
-        </div>
-        <p style={pNext}>Already have an Account? <span style={span}>Sign In</span></p>
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const handleSignUp = async (e: React.FormEvent) => {
+      e.preventDefault();
+
+      // Simple validation
+      if (password !== confirmPassword) {
+          alert('Passwords do not match');
+          return;
+      }
+
+      try {
+          const response = await axios.post('http://localhost:7000/api/v1/users/register', {
+              useremail: email,
+              userpassword: password,
+              username: username,
+          });
+
+          // Handle success response
+          console.log('User registered successfully:', response.data);
+
+          // Clear form
+          setUsername('');
+          setEmail('');
+          setPassword('');
+          setConfirmPassword('');
+      } catch (error) {
+          // Handle error response
+          // console.error('Error during registration:', error.response?.data || error.message);
+          console.log(error);
+          alert('Failed to register. Please try again.');
+      }
+  };
+
+  return (
+      <form onSubmit={handleSignUp} style={form}>
+          <h1 style={heading}>TASKHUB</h1><br /><br />
+          <h2 style={signIn}>SIGN UP</h2>
+
+          <label style={label}>
+              <p>Username</p>
+              <input
+                  type="text"
+                  style={userInput}
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+              />
+          </label>
+          <label style={label}>
+              <p>Email</p>
+              <input
+                  type="email"
+                  style={userInput}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+              />
+          </label>
+          <label style={label}>
+              <p>Password</p>
+              <input
+                  type="password"
+                  style={userInput}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+              />
+          </label>
+          <label style={label}>
+              <p>Confirm Password</p>
+              <input
+                  type="password"
+                  style={userInput}
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+              />
+          </label>
+
+          <h4 style={forget}>Forgot password?</h4>
+          <div>
+              <button type="submit" style={btn}>Sign Up</button>
+          </div>
+
+          <p>or</p>
+          <div style={googleDiv}>
+              <img src={google} alt="Google" style={googleImg} />
+              <p>Sign in with Google</p>
+          </div>
+          <p style={pNext}>Already have an Account? <span style={span}>Sign In</span></p>
       </form>
-    );
-  }
-  export default SignUp;
-  
+  );
+}
+
+export default SignUp;
