@@ -88,19 +88,19 @@ describe('Auth Routes', () => {
   });
 
   describe('GET /api/v1/users', () => {
-    // it('should return a list of users (protected route)', async () => {
-    //   (AuthController.getAllUsers as jest.Mock).mockImplementation((req: any, res: any) => {
-    //     res.status(200).json({ message: 'Users fetched successfully', data: mockUsers });
-    //   });
+    it('should return a list of users (protected route)', async () => {
+      (AuthController.getAllUsers as jest.Mock).mockImplementation((req: any, res: any) => {
+        res.status(200).json({ message: 'Users fetched successfully', data: mockUsers });
+      });
 
-    //   const response = await request(app)
-    //     .get('/api/v1/users')
-    //     .set('Authorization', 'Bearer mock_jwt_token');
+      const response = await request(app)
+        .get('/api/v1/users')
+        .set('Authorization', 'Bearer mock_jwt_token');
 
-    //   expect(response.status).toBe(200);
-    //   expect(response.body.message).toBe('Users fetched successfully');
-    //   expect(response.body.data).toEqual(mockUsers);
-    // });
+      expect(response.status).toBe(200);
+      expect(response.body.message).toBe('Users fetched successfully');
+      expect(response.body.data).toEqual(mockUsers);
+    });
 
     it('should return 401 for unauthorized access', async () => {
       const response = await request(app).get('/api/v1/users'); // No token provided
@@ -110,29 +110,29 @@ describe('Auth Routes', () => {
     });
   });
 
-  // describe('DELETE /api/v1/users/:userId', () => {
-  //   it('should delete a user (protected route)', async () => {
-  //     const userId = mockUser.xata_id;
-  //     (AuthController.deleteUser as jest.Mock).mockImplementation((req: any, res: any) => {
-  //       res.status(200).json({ message: 'User deleted successfully' });
-  //     });
+  describe('DELETE /api/v1/users/:userId', () => {
+    it('should delete a user (protected route)', async () => {
+      const userId = mockUser.xata_id;
+      (AuthController.deleteUser as jest.Mock).mockImplementation((req: any, res: any) => {
+        res.status(200).json({ message: 'User deleted successfully' });
+      });
 
-  //     const response = await request(app)
-  //       .delete(`/api/v1/users/${userId}`)
-  //       .set('Authorization', 'Bearer mock_jwt_token');
+      const response = await request(app)
+        .delete(`/api/v1/users/${userId}`)
+        .set('Authorization', 'Bearer mock_jwt_token');
 
-  //     expect(response.status).toBe(200);
-  //     expect(response.body.message).toBe('User deleted successfully');
-  //   });
+      expect(response.status).toBe(200);
+      expect(response.body.message).toBe('User deleted successfully');
+    });
 
-  //   it('should return 401 for unauthorized access', async () => {
-  //     const userId = mockUser.xata_id;
-  //     const response = await request(app).delete(`/api/v1/users/${userId}`); // No token provided
+    it('should return 401 for unauthorized access', async () => {
+      const userId = mockUser.xata_id;
+      const response = await request(app).delete(`/api/v1/users/${userId}`); // No token provided
 
-  //     expect(response.status).toBe(401);
-  //     expect(response.body.message).toBe('No token provided, authorization denied');
-  //   });
+      expect(response.status).toBe(401);
+      expect(response.body.message).toBe('No token provided, authorization denied');
+    });
 
-  //   // Add tests for invalid user ID, error handling, etc.
-  // });
+    // Add tests for invalid user ID, error handling, etc.
+  });
 });
