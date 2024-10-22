@@ -3,15 +3,26 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import morgan from 'morgan';
 
+
+
 dotenv.config();
+
+const app: Express = express();
+
+
 import AppError from './utils/AppError';
 import TaskRoutes from "./routes/TaskRoutes";
 import TeamRoutes from "./routes/TeamRoutes";
 import ProjectRoutes from "./routes/ProjectRoutes";
 import CommentsRoutes from "./routes/CommentRoutes";
-import AuthRoutes from './routes/AuthRoutes';
+import userRoutes from './routes/userRoutes';
+import dashBoardRoutes from './routes/dashBoardRoutes'
+import adminRoutes from './routes/adminRoutes';
 
-const app: Express = express();
+
+
+
+export default app;
 
 const port: number = parseInt(process.env.PORT as string, 10) || 7000;
 const host: string = 'localhost';
@@ -35,7 +46,7 @@ app.use("/api/v1/tasks", TaskRoutes);
 app.use("/api/v1/teams", TeamRoutes);
 app.use("/api/v1/projects", ProjectRoutes);
 app.use("/api/v1/comments", CommentsRoutes);
-app.use('/api/v1/users', AuthRoutes);
+app.use('/api/v1/users', userRoutes);
 
 // Handle undefined routes
 app.all("*", (req: Request, res: Response, next: NextFunction) => {
