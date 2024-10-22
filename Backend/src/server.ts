@@ -16,7 +16,9 @@ import TaskRoutes from "./routes/TaskRoutes";
 import TeamRoutes from "./routes/TeamRoutes";
 import ProjectRoutes from "./routes/ProjectRoutes";
 import CommentsRoutes from "./routes/CommentRoutes";
-import userRoutes from './routes/AuthRoutes';
+import userRoutes from './routes/userRoutes';
+import adminRoutes from './routes/adminRoutes';
+
 
 
 
